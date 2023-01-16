@@ -1,0 +1,76 @@
+.login {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.login p {
+  font-size: large;
+  align-self: center;
+  font-family: Helvetica;
+}
+
+.login .title {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.loginform {
+  font-family: Helvetica;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.loginform input[name="email"],
+input[name="password"] {
+  width: 80%;
+  height: 2rem;
+  margin: 1.5% 5% 5% 5%;
+  text-align: center;
+  font-size: large;
+  border-radius: 30px;
+  border: 5px solid whitesmoke;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.loginform input[type="submit"] {
+  align-self: start;
+  margin-left: 60px;
+  margin-right: 60px;
+  color: white;
+  background-color: rgb(0, 132, 255);
+  border: 1px solid rgb(0, 132, 255);
+  padding: 10px;
+  cursor: pointer;
+  font-size: large;
+  border-radius: 20px;
+  font-family: Helvetica;
+  transition: all 1s;
+}
+.loginform input[type="submit"]:hover {
+  background-color: brown;
+  border: 1px solid brown;
+}
+.loginform label {
+  margin-left: 12%;
+  align-self: flex-start;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.link {
+  align-self: center;
+  text-decoration: none;
+  color: grey;
+}
