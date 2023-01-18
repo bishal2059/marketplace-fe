@@ -28,7 +28,7 @@
 }
 
 .loginform input[name="email"],
-input[name="password"] {
+.loginform input[name="password"] {
   width: 80%;
   height: 2rem;
   margin: 1.5% 5% 5% 5%;
@@ -61,12 +61,6 @@ input[name="password"] {
 .loginform label {
   margin-left: 12%;
   align-self: flex-start;
-}
-
-.info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
 
 .link {

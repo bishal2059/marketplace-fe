@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Poster from "../img/poster.jpg";
+import Poster from "../../img/poster.jpg";
 import classes from "./MainBody.module.css";
 import MainCard from "./MainCard";
 

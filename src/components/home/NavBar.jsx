@@ -1,4 +1,4 @@
-import Logo from "../img/logo.jpg";
+import Logo from "../../img/logo.jpg";
 import React from "react";
 import classes from "./NavBar.module.css";
 import { Link } from "react-router-dom";

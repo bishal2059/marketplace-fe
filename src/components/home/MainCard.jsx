@@ -1,5 +1,5 @@
 import React from "react";
-import Pic from "../img/card.png";
+import Pic from "../../img/card.png";
 import {
   Card,
   CardHeader,

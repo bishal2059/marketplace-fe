@@ -1,8 +1,8 @@
 import React from "react";
-import NavBar from "../components/NavBar";
+import NavBar from "../components/home/NavBar";
 import { Divider, Chip } from "@mui/material";
-import Footer from "../components/Footer";
-import Login from "../components/Login";
+import Footer from "../components/home/Footer";
+import Login from "../components/home/Login";
 
 function LoginPage() {
   return (
