@@ -1,0 +1,29 @@
+.categories {
+  display: flex;
+  flex-direction: column;
+  border-right: 5px solid grey;
+  border-top: 5px solid grey;
+  border-bottom: 5px solid grey;
+  width: 20vw;
+  padding-left: 0;
+}
+
+.title {
+  margin: 5px;
+}
+
+.categories li {
+  list-style: none;
+  font-family: Helvetica;
+  padding: 5px;
+  color: aliceblue;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 5px solid rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+
+.categories li:hover {
+  background-color: lightskyblue;
+  border: 5px solid lightskyblue;
+  color: black;
+}

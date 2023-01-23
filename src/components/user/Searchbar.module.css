@@ -1,0 +1,30 @@
+.search {
+  display: flex;
+  width: 500px;
+  margin: 3% 0 0 3%;
+}
+
+.search input[type="text"] {
+  flex-basis: 80%;
+  height: 2rem;
+  text-align: center;
+  font-size: large;
+  border-radius: 30px;
+  border: 5px solid whitesmoke;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.search input[type="submit"] {
+  align-self: start;
+  margin-left: 5px;
+  color: white;
+  background-color: rgb(0, 132, 255);
+  border: 1px solid rgb(0, 132, 255);
+  padding: 10px;
+  cursor: pointer;
+  font-size: large;
+  border-radius: 20px;
+  font-family: Helvetica;
+  transition: all 1s;
+}
