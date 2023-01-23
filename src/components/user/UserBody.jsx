@@ -1,6 +1,7 @@
 import React from "react";
 import Categories from "./Categories";
 import Searchbar from "./Searchbar";
+import UserOption from "./UserOption";
 
 function UserBody() {
   return (
@@ -9,6 +10,7 @@ function UserBody() {
       <div>
         <Searchbar />
       </div>
+      <UserOption />
     </div>
   );
 }

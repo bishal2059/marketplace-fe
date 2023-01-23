@@ -1,0 +1,10 @@
+.option {
+  display: flex;
+  margin: 2%;
+  font-size: large;
+}
+
+.option > * {
+  margin: 2px 25px 5px 25px;
+  cursor: pointer;
+}
