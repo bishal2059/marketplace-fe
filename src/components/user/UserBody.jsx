@@ -2,17 +2,19 @@ import React from "react";
 import Categories from "./Categories";
 import ProductShow from "./ProductShow";
 import Searchbar from "./Searchbar";
-import UserOption from "./UserOption";
 
-function UserBody() {
+function UserBody(props) {
   return (
     <div style={{ display: "flex" }}>
       <Categories />
       <div>
         <Searchbar />
-        <ProductShow />
+        <ProductShow
+          allProducts={props?.allProducts}
+          previous={props?.previous}
+          next={props?.next}
+        />
       </div>
-      <UserOption />
     </div>
   );
 }

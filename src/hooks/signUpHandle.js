@@ -3,6 +3,7 @@ async function signUpHandler(userData) {
   try {
     const result = await fetch(`${URL}/signin`, {
       method: "POST",
+      credentials: "include",
       headers: {
         "Content-type": "application/json",
       },

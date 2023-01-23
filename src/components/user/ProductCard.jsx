@@ -13,7 +13,7 @@ function ProductCard(props) {
           <p className={classes.brand}>{props.brand}</p>
           <p className={classes.category}>{props.category}</p>
         </div>
-        <p>
+        <div>
           <StarRatings
             rating={props.rating}
             starRatedColor="blue"
@@ -23,11 +23,11 @@ function ProductCard(props) {
             starSpacing="5px"
           />
           ({props.rating})
-        </p>
+        </div>
         <p>{props.description}</p>
         <p style={{ color: "red" }}>{props.stock} left</p>
       </main>
-      <side>
+      <section>
         <p className={classes.price}>
           ${(((100 - props.discountPercentage) / 100) * props.price).toFixed(2)}
         </p>
@@ -42,7 +42,7 @@ function ProductCard(props) {
         ) : (
           <ShoppingCart sx={{ fontSize: "40px" }} />
         )}
-      </side>
+      </section>
     </div>
   );
 }

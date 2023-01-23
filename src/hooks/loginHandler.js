@@ -2,6 +2,7 @@ async function loginHandler(userData) {
   try {
     const result = await fetch(`http://localhost:8000/login`, {
       method: "POST",
+      credentials: "include",
       headers: {
         "Content-type": "application/json",
       },
