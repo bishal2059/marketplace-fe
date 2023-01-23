@@ -80,3 +80,19 @@ input::-webkit-inner-spin-button {
   font-family: Helvetica;
   font-weight: bold;
 }
+
+.error {
+  position: absolute !important;
+  color: red;
+  top: 25%;
+  font-size: 2.2rem;
+  font-family: Helvetica;
+}
+
+.success {
+  position: absolute !important;
+  color: green;
+  top: 25%;
+  font-size: 2.2rem;
+  font-family: Helvetica;
+}

@@ -68,3 +68,8 @@
   text-decoration: none;
   color: grey;
 }
+
+.error {
+  font-size: medium;
+  color: red;
+}
