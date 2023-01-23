@@ -1,0 +1,86 @@
+.cart {
+  display: flex;
+  height: 200px;
+  margin: 10px;
+  width: 150%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  cursor: pointer;
+}
+
+.cart img {
+  border-radius: 10%;
+  margin: auto;
+  margin-right: 9px;
+  margin-left: 9px;
+  height: 80%;
+  width: 25%;
+  transition: all 1s;
+}
+
+.cart img:hover {
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+
+.cart main {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid grey;
+}
+
+.cart main div {
+  display: flex;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.cart main > * {
+  margin: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.brand {
+  margin-left: 20px;
+  color: green;
+  text-transform: uppercase;
+}
+
+.category {
+  margin-left: 20px;
+  color: black;
+  opacity: 0.8;
+  text-transform: capitalize;
+}
+
+.cart main header {
+  font-size: 2.5rem;
+  margin-top: 3.5%;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.cart side {
+  display: flex;
+  flex-basis: 25%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart side > * {
+  margin: 0 10% 0 10%;
+}
+
+.price {
+  margin-bottom: 0;
+  font-size: large;
+}
+
+.oldprice {
+  margin-top: 0;
+  opacity: 0.85;
+  color: red;
+  text-decoration: line-through;
+  margin-bottom: 30% !important;
+}
