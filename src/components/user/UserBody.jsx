@@ -6,7 +6,7 @@ import Searchbar from "./Searchbar";
 function UserBody(props) {
   return (
     <div style={{ display: "flex" }}>
-      <Categories />
+      <Categories active={props.active}/>
       <div>
         <Searchbar />
         <ProductShow

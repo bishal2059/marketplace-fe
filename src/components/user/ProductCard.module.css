@@ -1,5 +1,7 @@
 .cart {
   display: flex;
+  justify-content: center;
+  align-items: center;
   height: 200px;
   margin: 10px;
   width: 100%;
@@ -26,11 +28,13 @@
 .cart main {
   display: flex;
   flex-direction: column;
+  width: 60%;
   border-right: 1px solid grey;
 }
 
 .cart main div {
   display: flex;
+  justify-content: space-between;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }

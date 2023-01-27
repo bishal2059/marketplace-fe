@@ -2,3 +2,27 @@
   cursor: pointer;
   width: 75vw;
 }
+
+.page {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page button {
+  border-radius: 20px;
+  text-align: center;
+  font-size: medium;
+  color: white;
+  background-color: rgb(0, 132, 255);
+  border: 1px solid rgb(0, 132, 255);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.notfound {
+  position: absolute;
+  height: 400px;
+  width: 600px;
+  top: 30%;
+  left: 30%;
+}

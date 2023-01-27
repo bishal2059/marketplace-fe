@@ -11,7 +11,6 @@ function ProductCard(props) {
         <div>
           <header>{props.name}</header>
           <p className={classes.brand}>{props.brand}</p>
-          <p className={classes.category}>{props.category}</p>
         </div>
         <div>
           <StarRatings
@@ -20,9 +19,10 @@ function ProductCard(props) {
             numberOfStars={5}
             name="rating"
             starDimension="20px"
-            starSpacing="5px"
+            starSpacing="4px"
+            starEmptyColor="white"
+            starHoverColor="orange"
           />
-          ({props.rating})
         </div>
         <p>{props.description}</p>
         <p style={{ color: "red" }}>{props.stock} left</p>

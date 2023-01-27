@@ -10,6 +10,7 @@
 
 .title {
   margin: 5px;
+  cursor: pointer;
 }
 
 .categories li {
@@ -26,4 +27,14 @@
   background-color: lightskyblue;
   border: 5px solid lightskyblue;
   color: black;
+}
+
+.active {
+  /* background-color: lightskyblue !important;
+  border: 5px solid lightskyblue !important;
+  color: black !important; */
+  background-image: linear-gradient(135deg, #f34079 40%, #fc894d) !important;
+  border: 5px solid #f34079 !important;
+  border-right-color: #fc894d !important;
+  font-weight: 800 !important;
 }

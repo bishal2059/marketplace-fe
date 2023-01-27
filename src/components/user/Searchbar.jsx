@@ -5,7 +5,7 @@ import classes from "./Searchbar.module.css";
 
 function Searchbar() {
   const search = useRef();
-  let { setname } = useContext(PageContext);
+  const { setname } = useContext(PageContext);
   return (
     <div>
       <form

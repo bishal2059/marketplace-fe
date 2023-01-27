@@ -3,16 +3,17 @@ import ProductCard from "./ProductCard";
 import classes from "./ProductShow.module.css";
 import { useContext } from "react";
 import PageContext from "../../contexts/Pages";
+import notfound from "../../img/notfound.png";
 
 function ProductShow(props) {
-  let { page, setpage } = useContext(PageContext);
+  const { page, setpage } = useContext(PageContext);
   return (
     <div className={classes.show}>
       {props.allProducts
         ? props.allProducts.map((element) => {
-            console.log(element);
             return (
               <ProductCard
+                key={element._id}
                 name={element.name}
                 brand={element.brand}
                 description={element.description}
@@ -27,25 +28,38 @@ function ProductShow(props) {
             );
           })
         : null}
-      <div>
+      {props.allProducts?.length === 0 ? (
+        <>
+          <img
+            src={notfound}
+            alt="PRODUCTS NOT FOUND"
+            className={classes.notfound}
+          />
+        </>
+      ) : null}
+      <div className={classes.page}>
         {props.previous ? (
-          <button
-            onClick={() => {
-              setpage(page + 1);
-            }}
-          >
-            Previous
-          </button>
-        ) : null}
-        {props.next ? (
           <button
             onClick={() => {
               setpage(page - 1);
             }}
           >
+            Previous
+          </button>
+        ) : (
+          <div></div>
+        )}
+        {props.next ? (
+          <button
+            onClick={() => {
+              setpage(page + 1);
+            }}
+          >
             Next
           </button>
-        ) : null}
+        ) : (
+          <div></div>
+        )}
       </div>
     </div>
   );
