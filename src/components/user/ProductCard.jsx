@@ -1,12 +1,14 @@
 import { Favorite, FavoriteBorder, ShoppingCart } from "@mui/icons-material";
-import React from "react";
+import React, { useState } from "react";
 import StarRatings from "react-star-ratings";
+import ImgSlider from "./ImgSlider";
 import classes from "./ProductCard.module.css";
 
 function ProductCard(props) {
+  const [favourite, setfavourite] = useState(props.favourite);
   return (
     <div className={classes.cart}>
-      <img src={props.thumbnail} alt="Thumbnail" />
+      <ImgSlider thumbnail={props.thumbnail} images={props.images} />
       <main>
         <div>
           <header>{props.name}</header>
@@ -32,10 +34,20 @@ function ProductCard(props) {
           ${(((100 - props.discountPercentage) / 100) * props.price).toFixed(2)}
         </p>
         <p className={classes.oldprice}>${props.price}</p>
-        {props.favourite ? (
-          <Favorite sx={{ color: "red", fontSize: "40px" }} />
+        {favourite ? (
+          <Favorite
+            sx={{ color: "red", fontSize: "40px" }}
+            onClick={() => {
+              setfavourite(false);
+            }}
+          />
         ) : (
-          <FavoriteBorder sx={{ color: "red", fontSize: "40px" }} />
+          <FavoriteBorder
+            sx={{ color: "red", fontSize: "40px" }}
+            onClick={() => {
+              setfavourite(true);
+            }}
+          />
         )}
         {props.cart ? (
           <ShoppingCart sx={{ color: "green", fontSize: "40px" }} />

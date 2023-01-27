@@ -10,7 +10,7 @@
   cursor: pointer;
 }
 
-.cart img {
+.cart img[alt="thumbnail"] {
   border-radius: 10%;
   margin: auto;
   margin-right: 9px;
@@ -20,7 +20,7 @@
   transition: all 1s;
 }
 
-.cart img:hover {
+.cart img[alt="thumbnail"]:hover {
   transform: scale(0.9);
   opacity: 0.8;
 }

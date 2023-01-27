@@ -22,7 +22,15 @@ function Categories(props) {
           navigate(`/category/${target}`);
         }}
       >
-        <h2 className={classes.title}>CATEGORIES</h2>
+        <h2
+          className={classes.title}
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/products");
+          }}
+        >
+          CATEGORIES
+        </h2>
         {categories.map((e) => {
           return (
             <li key={e} className={props.active === e ? classes.active : null}>

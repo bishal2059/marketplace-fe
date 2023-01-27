@@ -1,0 +1,24 @@
+.before {
+  font-size: 80px;
+  opacity: 0.9;
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  transition: all 1s;
+}
+
+.before:hover {
+  color: rgb(165, 219, 16);
+}
+
+.after {
+  font-size: 80px;
+  opacity: 0.9;
+  position: absolute;
+  top: 40%;
+  left: 90%;
+  transition: all 1s;
+}
+.after:hover {
+  color: rgb(165, 219, 16);
+}
