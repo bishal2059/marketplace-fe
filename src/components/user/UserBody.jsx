@@ -2,11 +2,12 @@ import React from "react";
 import Categories from "./Categories";
 import ProductShow from "./ProductShow";
 import Searchbar from "./Searchbar";
+import UserOption from "./UserOption";
 
 function UserBody(props) {
   return (
     <div style={{ display: "flex" }}>
-      <Categories active={props.active}/>
+      <Categories active={props.active} />
       <div>
         <Searchbar />
         <ProductShow
@@ -15,6 +16,7 @@ function UserBody(props) {
           next={props?.next}
         />
       </div>
+      <UserOption />
     </div>
   );
 }

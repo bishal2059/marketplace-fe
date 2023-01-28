@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import profile from "../../img/profile.png";
 import classes from "./NavUser.module.css";
 
-function NavUser() {
+function NavUser(props) {
   return (
     <div className={classes.nav}>
       <img src={Logo} alt="Logo" className={classes.navImg} />
@@ -12,6 +12,11 @@ function NavUser() {
         <p className={classes.titleName}>Marketplace</p>
         <p className={classes.subtitleName}>One place store</p>
       </div>
+      {props.goback ? (
+        <Link className={classes.signup} to="/products">
+          Go Back
+        </Link>
+      ) : null}
       <Link className={classes.login} to="/">
         <img src={profile} alt="user" className={classes.img} />
       </Link>

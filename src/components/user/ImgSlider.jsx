@@ -11,10 +11,10 @@ function ImgSlider(props) {
     setOpen(!open);
   };
   const [number, setNumber] = useState(0);
-  const imgList = props.images;
+  const imgList = props?.images;
   return (
     <>
-      <img src={props.thumbnail} alt="thumbnail" onClick={handleToggle} />
+      <img src={props?.thumbnail} alt="thumbnail" onClick={handleToggle} />
       <div>
         <Backdrop
           sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}

@@ -1,10 +1,11 @@
 .option {
-  display: flex;
-  margin: 2%;
-  font-size: large;
+  position: absolute;
+  width: 250px;
+  left: 75%;
+  top: 13%;
 }
 
 .option > * {
-  margin: 2px 25px 5px 25px;
+  margin: 4px;
   cursor: pointer;
 }

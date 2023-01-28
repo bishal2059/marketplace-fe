@@ -14,6 +14,7 @@ function ProductShow(props) {
             return (
               <ProductCard
                 key={element._id}
+                id={element._id}
                 name={element.name}
                 brand={element.brand}
                 description={element.description}
@@ -24,6 +25,7 @@ function ProductShow(props) {
                 stock={element.stock}
                 thumbnail={element.thumbnail}
                 category={element.category}
+                favourite={element.favourite}
               />
             );
           })

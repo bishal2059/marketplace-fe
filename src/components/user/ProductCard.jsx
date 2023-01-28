@@ -1,6 +1,10 @@
 import { Favorite, FavoriteBorder, ShoppingCart } from "@mui/icons-material";
 import React, { useState } from "react";
 import StarRatings from "react-star-ratings";
+import {
+  addToFavourite,
+  removeFromFavourite,
+} from "../../hooks/favouriteHandle";
 import ImgSlider from "./ImgSlider";
 import classes from "./ProductCard.module.css";
 
@@ -37,15 +41,37 @@ function ProductCard(props) {
         {favourite ? (
           <Favorite
             sx={{ color: "red", fontSize: "40px" }}
-            onClick={() => {
-              setfavourite(false);
+            onClick={async () => {
+              const response = await removeFromFavourite(props.id);
+              if (response?.clientError) {
+                console.error(response.clientError);
+                return;
+              }
+              if (response?.error) {
+                console.error(response.error);
+                return;
+              }
+              if (response?.success === "Removed from Favourite") {
+                setfavourite(false);
+              }
             }}
           />
         ) : (
           <FavoriteBorder
             sx={{ color: "red", fontSize: "40px" }}
-            onClick={() => {
-              setfavourite(true);
+            onClick={async () => {
+              const response = await addToFavourite(props.id);
+              if (response?.clientError) {
+                console.error(response.clientError);
+                return;
+              }
+              if (response?.error) {
+                console.error(response.error);
+                return;
+              }
+              if (response?.success === "Added to Favourite") {
+                setfavourite(true);
+              }
             }}
           />
         )}
