@@ -17,7 +17,7 @@ function NavUser(props) {
           Go Back
         </Link>
       ) : null}
-      <Link className={classes.login} to="/">
+      <Link className={classes.login} to="/users">
         <img src={profile} alt="user" className={classes.img} />
       </Link>
 

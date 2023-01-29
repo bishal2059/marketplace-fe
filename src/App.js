@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Category from "./pages/Category";
 import HistoryPage from "./pages/HistoryPage";
 import CartPage from "./pages/CartPage";
+import UserPage from "./pages/UserPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/favourite" element={<FavouritePage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/history" element={<HistoryPage />} />
+          <Route path="/users" element={<UserPage />} />
         </Routes>
       </BrowserRouter>
     </div>

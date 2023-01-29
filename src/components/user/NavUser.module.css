@@ -34,6 +34,7 @@
 }
 
 .login {
+  text-align: center;
   text-decoration: none;
   align-self: center;
   margin: 5px 5px 5px 5px;
@@ -50,6 +51,7 @@
 
 .signup {
   text-decoration: none;
+  text-align: center;
   align-self: center;
   margin: 5px;
   color: white;

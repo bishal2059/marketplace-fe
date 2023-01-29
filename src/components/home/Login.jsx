@@ -20,7 +20,6 @@ function Login() {
             email: loginRef.current.email.value,
             password: loginRef.current.password.value,
           };
-          console.log(userData);
           const response = await loginHandler(userData);
           if (response.clientError) {
             errorRef.current.textContent = response.clientError;
@@ -32,7 +31,6 @@ function Login() {
             });
           }
           if (response.user) {
-            console.log(response.user);
             navigate("/products");
           }
         }}
