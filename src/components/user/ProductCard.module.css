@@ -88,3 +88,23 @@
   text-decoration: line-through;
   margin-bottom: 30% !important;
 }
+
+.buynow {
+  margin: 5px;
+  padding: 5px;
+  height: 7%;
+  text-decoration: none;
+  align-self: center;
+  color: white;
+  background-color: rgb(0, 132, 255);
+  border-radius: 20px;
+  border: 2px solid rgb(0, 132, 255);
+  font-family: Helvetica;
+  transition: all 1s;
+  cursor: pointer;
+}
+
+.buynow:hover {
+  background-color: brown;
+  border: 2px solid brown;
+}

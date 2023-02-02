@@ -17,7 +17,6 @@ function UserDetails(props) {
     <div className={classes.user}>
       <img src={profile} alt="user" className={classes.profilepic} />
       <p>
-        {" "}
         <span>Name: </span>
         {props.firstName} {props.lastName}
       </p>

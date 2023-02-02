@@ -14,6 +14,7 @@ function UserBody(props) {
           allProducts={props?.allProducts}
           previous={props?.previous}
           next={props?.next}
+          state={props.state}
         />
       </div>
       <UserOption />

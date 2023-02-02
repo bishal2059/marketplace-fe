@@ -26,6 +26,8 @@ function ProductShow(props) {
                 thumbnail={element.thumbnail}
                 category={element.category}
                 favourite={element.favourite}
+                cart={element.cart}
+                state={props.state}
               />
             );
           })
