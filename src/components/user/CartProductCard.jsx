@@ -5,6 +5,8 @@ import { Backdrop, Alert } from "@mui/material";
 import { removeFromCart } from "../../hooks/cartHandle";
 import ImgSlider from "./ImgSlider";
 import classes from "./ProductCard.module.css";
+import StripeCheckout from "react-stripe-checkout";
+import paymentHandler from "../../hooks/paymentHandle";
 
 function ProductCard(props) {
   const [error, seterror] = useState(null);
@@ -15,7 +17,48 @@ function ProductCard(props) {
   const handleToggle = (e) => {
     setOpen(!open);
   };
+  const [open2, setOpen2] = useState(false);
+  const handleClose2 = async () => {
+    setOpen2(false);
+    await removeItemFromCart();
+  };
+  const handleToggle2 = (e) => {
+    setOpen2(!open);
+  };
   const [cart, setcart] = useState(props.cart);
+
+  const makePayment = async function (token) {
+    const response = await paymentHandler(token, props.id);
+    if (response?.clientError) {
+      return console.error(response.clientError);
+    }
+    if (response?.error) {
+      return console.error(response.error);
+    }
+    if (response?.success === "Payment Successful") {
+      console.log("Success");
+      handleToggle2();
+    }
+  };
+  const removeItemFromCart = async function () {
+    const response = await removeFromCart(props.id);
+    if (response?.unverified === true) {
+      seterror(response?.message);
+      handleToggle();
+    }
+    if (response?.clientError) {
+      console.error(response.clientError);
+      return;
+    }
+    if (response?.error) {
+      console.error(response.error);
+      return;
+    }
+    if (response?.success === "Removed from Cart") {
+      setcart(false);
+      props.state((value) => !value);
+    }
+  };
   return (
     <div className={classes.cart}>
       <ImgSlider thumbnail={props.thumbnail} images={props.images} />
@@ -47,28 +90,24 @@ function ProductCard(props) {
         {cart ? (
           <ShoppingCart
             sx={{ color: "green", fontSize: "40px" }}
-            onClick={async () => {
-              const response = await removeFromCart(props.id);
-              if (response?.unverified === true) {
-                seterror(response?.message);
-                handleToggle();
-              }
-              if (response?.clientError) {
-                console.error(response.clientError);
-                return;
-              }
-              if (response?.error) {
-                console.error(response.error);
-                return;
-              }
-              if (response?.success === "Removed from Cart") {
-                setcart(false);
-                props.state((value) => !value);
-              }
-            }}
+            onClick={removeItemFromCart}
           />
         ) : null}
-        <button className={classes.buynow}>Buy now</button>
+        <StripeCheckout
+          stripeKey={process.env.REACT_APP_STRIPEKEY}
+          token={makePayment}
+          name={props.name}
+          amount={
+            (((100 - props.discountPercentage) / 100) * props.price).toFixed(
+              2
+            ) * 100
+          }
+          currency="USD"
+          shippingAddress
+          billingAddress
+        >
+          <button className={classes.buynow}>Buy Now</button>
+        </StripeCheckout>
       </section>
       <Backdrop
         sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
@@ -76,6 +115,13 @@ function ProductCard(props) {
         onClick={handleClose}
       >
         <Alert severity="error">{error}</Alert>
+      </Backdrop>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open2}
+        onClick={handleClose2}
+      >
+        <Alert severity="success">Congrats!! You bought an {props.name}</Alert>
       </Backdrop>
     </div>
   );
