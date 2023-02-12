@@ -23,8 +23,16 @@ function ProductCard(props) {
     await removeItemFromCart();
   };
   const handleToggle2 = (e) => {
-    setOpen2(!open);
+    setOpen2(!open2);
   };
+  const [open3, setOpen3] = useState(false);
+  const handleClose3 = async () => {
+    setOpen3(false);
+  };
+  const handleToggle3 = (e) => {
+    setOpen3(!open3);
+  };
+
   const [cart, setcart] = useState(props.cart);
 
   const makePayment = async function (token) {
@@ -33,6 +41,7 @@ function ProductCard(props) {
       return console.error(response.clientError);
     }
     if (response?.error) {
+      handleToggle3();
       return console.error(response.error);
     }
     if (response?.success === "Payment Successful") {
@@ -122,6 +131,13 @@ function ProductCard(props) {
         onClick={handleClose2}
       >
         <Alert severity="success">Congrats!! You bought an {props.name}</Alert>
+      </Backdrop>
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open3}
+        onClick={handleClose3}
+      >
+        <Alert severity="error">An error occured during payment.</Alert>
       </Backdrop>
     </div>
   );
