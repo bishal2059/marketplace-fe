@@ -1,6 +1,6 @@
 async function loginHandler(userData) {
   try {
-    const result = await fetch(`http://localhost:8000/login`, {
+    const result = await fetch(`${process.env.REACT_APP_APIURL}/login`, {
       method: "POST",
       credentials: "include",
       headers: {

@@ -1,7 +1,7 @@
 async function getCategories(limit, page, name, category) {
   try {
     let response = await fetch(
-      `http://localhost:8000/products/${category}?limit=${limit}&page=${page}&name=${name}`,
+      `${process.env.REACT_APP_APIURL}/products/${category}?limit=${limit}&page=${page}&name=${name}`,
       {
         credentials: "include",
       }
@@ -10,7 +10,7 @@ async function getCategories(limit, page, name, category) {
     if (responseBody?.success === "Token refreshed") {
       console.log();
       response = await fetch(
-        `http://localhost:8000/products/${category}?limit=${limit}&page=${page}&name=${name}`,
+        `${process.env.REACT_APP_APIURL}/products/${category}?limit=${limit}&page=${page}&name=${name}`,
         {
           credentials: "include",
         }

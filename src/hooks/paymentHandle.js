@@ -1,6 +1,6 @@
 const paymentHandler = async function (token, productID) {
   try {
-    let response = await fetch(`http://localhost:8000/payment`, {
+    let response = await fetch(`${process.env.REACT_APP_APIURL}/payment`, {
       credentials: "include",
       method: "POST",
       headers: {
@@ -10,7 +10,7 @@ const paymentHandler = async function (token, productID) {
     });
     let responseBody = await response.json();
     if (responseBody?.success === "Token refreshed") {
-      response = await fetch(`http://localhost:8000/payment`, {
+      response = await fetch(`${process.env.REACT_APP_APIURL}/payment`, {
         credentials: "include",
         method: "POST",
         headers: {

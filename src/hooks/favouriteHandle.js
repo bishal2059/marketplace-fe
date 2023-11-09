@@ -1,7 +1,7 @@
 const addToFavourite = async function (id) {
   const requestBody = { id: id };
   try {
-    let response = await fetch(`http://localhost:8000/favourites`, {
+    let response = await fetch(`${process.env.REACT_APP_APIURL}/favourites`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -11,7 +11,7 @@ const addToFavourite = async function (id) {
     });
     let responseBody = await response.json();
     if (responseBody?.success === "Token refreshed") {
-      response = await fetch(`http://localhost:8000/favourites`, {
+      response = await fetch(`${process.env.REACT_APP_APIURL}/favourites`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -31,16 +31,22 @@ const addToFavourite = async function (id) {
 
 const removeFromFavourite = async function (id) {
   try {
-    let response = await fetch(`http://localhost:8000/favourites/${id}`, {
-      method: "DELETE",
-      credentials: "include",
-    });
-    let responseBody = await response.json();
-    if (responseBody?.success === "Token refreshed") {
-      response = await fetch(`http://localhost:8000/favourites/${id}`, {
+    let response = await fetch(
+      `${process.env.REACT_APP_APIURL}/favourites/${id}`,
+      {
         method: "DELETE",
         credentials: "include",
-      });
+      }
+    );
+    let responseBody = await response.json();
+    if (responseBody?.success === "Token refreshed") {
+      response = await fetch(
+        `${process.env.REACT_APP_APIURL}/favourites/${id}`,
+        {
+          method: "DELETE",
+          credentials: "include",
+        }
+      );
       responseBody = await response.json();
     }
     return responseBody;
@@ -53,12 +59,12 @@ const removeFromFavourite = async function (id) {
 
 const getAllFavourite = async function () {
   try {
-    let response = await fetch("http://localhost:8000/favourites", {
+    let response = await fetch(`${process.env.REACT_APP_APIURL}/favourites`, {
       credentials: "include",
     });
     let responseBody = await response.json();
     if (responseBody?.success === "Token refreshed") {
-      response = await fetch("http://localhost:8000/favourites", {
+      response = await fetch(`${process.env.REACT_APP_APIURL}/favourites`, {
         credentials: "include",
       });
       responseBody = response.json();

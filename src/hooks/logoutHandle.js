@@ -1,11 +1,11 @@
 const logoutHandle = async function () {
   try {
-    let response = await fetch("http://localhost:8000/logout", {
+    let response = await fetch(`${process.env.REACT_APP_APIURL}/logout`, {
       credentials: "include",
     });
     let responseBody = await response.json();
     if (responseBody?.success === "Token refreshed") {
-      response = await fetch("http://localhost:8000/logout", {
+      response = await fetch(`${process.env.REACT_APP_APIURL}/logout`, {
         credentials: "include",
       });
       responseBody = response.json();

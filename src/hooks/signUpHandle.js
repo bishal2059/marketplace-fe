@@ -1,4 +1,4 @@
-const URL = "http://localhost:8000";
+const URL = `${process.env.REACT_APP_APIURL}`;
 async function signUpHandler(userData) {
   try {
     const result = await fetch(`${URL}/signin`, {

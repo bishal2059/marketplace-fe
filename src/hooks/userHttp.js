@@ -1,11 +1,11 @@
 const getUserDetails = async function () {
   try {
-    let response = await fetch("http://localhost:8000/user", {
+    let response = await fetch(`${process.env.REACT_APP_APIURL}/user`, {
       credentials: "include",
     });
     let responseBody = response.json();
     if (response?.success === "Token refreshed") {
-      response = await fetch("http://localhost:8000/user", {
+      response = await fetch(`${process.env.REACT_APP_APIURL}/user`, {
         credentials: "include",
       });
       responseBody = response.json();
@@ -20,12 +20,12 @@ const getUserDetails = async function () {
 
 const verifyUser = async function () {
   try {
-    let response = await fetch("http://localhost:8000/verify", {
+    let response = await fetch(`${process.env.REACT_APP_APIURL}/verify`, {
       credentials: "include",
     });
     let responseBody = response.json();
     if (responseBody?.success === "Token refreshed") {
-      response = await fetch("http://localhost:8000/verify", {
+      response = await fetch(`${process.env.REACT_APP_APIURL}/verify`, {
         credentials: "include",
       });
       responseBody = response.json();
