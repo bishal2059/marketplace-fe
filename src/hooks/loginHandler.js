@@ -1,6 +1,7 @@
 async function loginHandler(userData) {
   try {
     const result = await fetch(`${process.env.REACT_APP_APIURL}/login`, {
+      mode: "cors",
       method: "POST",
       credentials: "include",
       headers: {

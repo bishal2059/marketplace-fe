@@ -3,6 +3,7 @@ async function getAllProducts(limit, page, name) {
     let response = await fetch(
       `${process.env.REACT_APP_APIURL}/products?limit=${limit}&page=${page}&name=${name}`,
       {
+        mode: "cors",
         credentials: "include",
       }
     );
@@ -11,6 +12,7 @@ async function getAllProducts(limit, page, name) {
       response = await fetch(
         `${process.env.REACT_APP_APIURL}/products?limit=${limit}&page=${page}&name=${name}`,
         {
+          mode: "cors",
           credentials: "include",
         }
       );
