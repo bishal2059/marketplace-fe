@@ -68,31 +68,41 @@ function SignUp() {
         ></div>
         <div className={classes.first}>
           <label htmlFor="firstName">First Name:</label>
-          <input type="text" name="firstName" autoComplete="off" />
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            autoComplete="off"
+          />
           <label htmlFor="lastName">Last Name:</label>
-          <input type="text" name="lastName" autoComplete="off" />
+          <input type="text" name="lastName" id="lastName" autoComplete="off" />
           <label htmlFor="gender">Gender:</label>
-          <select name="gender" autoComplete="off">
+          <select name="gender" id="gender" autoComplete="off">
             <option value="Male"> Male</option>
             <option value="Female">Female</option>
           </select>
         </div>
         <div className={classes.second}>
           <label htmlFor="dateOfBirth">Date of Birth:</label>
-          <input type="date" name="dateOfBirth" autoComplete="off" />
+          <input
+            type="date"
+            name="dateOfBirth"
+            id="dateOfBirth"
+            autoComplete="off"
+          />
           <label htmlFor="phoneNo">Phone No:</label>
-          <input type="number" name="phoneNo" autoComplete="off" />
+          <input type="number" name="phoneNo" id="phoneNo" autoComplete="off" />
 
           <label htmlFor="userName">UserName:</label>
-          <input type="text" name="userName" autoComplete="off" />
+          <input type="text" name="userName" id="userName" autoComplete="off" />
         </div>
         <div className={classes.third}>
           <label htmlFor="email"> Email:</label>
-          <input type="email" name="email" autoComplete="off" />
+          <input type="email" name="email" id="email" autoComplete="off" />
           <label htmlFor="password"> Password:</label>
-          <input type="password" name="password" />
+          <input type="password" name="password" id="password" />
           <label htmlFor="cpassword"> Confirm Password:</label>
-          <input type="password" name="cpassword" />
+          <input type="password" name="cpassword" id="cpassword" />
           <input type="submit" value="Sign Up" />
         </div>
       </form>

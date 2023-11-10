@@ -36,9 +36,14 @@ function Login() {
         }}
       >
         <label htmlFor="email"> Email:</label>
-        <input type="email" name="email" autoComplete="off" />
+        <input type="email" id="email" name="email" autoComplete="off" />
         <label htmlFor="password"> Password:</label>
-        <input type="password" name="password" autoComplete="off" />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          autoComplete="off"
+        />
         <div ref={errorRef} className={classes.error}></div>
         <input type="submit" value="Login" />
         <Link className={classes.link}> Forgot password</Link>
