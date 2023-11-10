@@ -3,6 +3,7 @@ const addToCart = async function (id) {
   try {
     let response = await fetch(`${process.env.REACT_APP_APIURL}/cart`, {
       method: "POST",
+      mode: "cors",
       headers: {
         "Content-type": "application/json",
       },
@@ -13,6 +14,7 @@ const addToCart = async function (id) {
     if (responseBody?.success === "Token refreshed") {
       response = await fetch(`${process.env.REACT_APP_APIURL}/cart`, {
         method: "POST",
+        mode: "cors",
         headers: {
           "Content-type": "application/json",
         },
@@ -45,6 +47,7 @@ const removeFromCart = async function (id) {
     if (responseBody?.success === "Token refreshed") {
       response = await fetch(`${process.env.REACT_APP_APIURL}/cart/${id}`, {
         method: "DELETE",
+        mode: "cors",
         credentials: "include",
       });
       responseBody = await response.json();
@@ -65,7 +68,7 @@ const removeFromCart = async function (id) {
 
 const getAllCart = async function () {
   try {
-    let response = await fetch(`{process.env.REACT_APP_APIURL}/cart`, {
+    let response = await fetch(`${process.env.REACT_APP_APIURL}/cart`, {
       credentials: "include",
     });
     let responseBody = await response.json();
