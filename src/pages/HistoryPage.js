@@ -10,7 +10,7 @@ function HistoryPage() {
   useEffect(() => {
     (async function () {
       const response = await getAllHistory();
-      console.log(response);
+      // console.log(response);
       if (response?.error) {
         setproducts([]);
         return;
