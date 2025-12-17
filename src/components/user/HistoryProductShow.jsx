@@ -1,17 +1,16 @@
-import React from "react";
-import classes from "./ProductShow.module.css";
-import notfound from "../../img/notfound.png";
-import HistoryProductCard from "./HistoryProductCard";
+import React from 'react';
+import { Box, Grid, Paper, Typography } from '@mui/material';
+import HistoryProductCard from './HistoryProductCard';
+import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 
 function HistoryProductShow(props) {
   return (
-    <>
-      <div className={classes.show}>
+    <Box>
+      <Grid container spacing={3}>
         {props.allProducts
-          ? props.allProducts?.map((element) => {
-              return (
+          ? props.allProducts?.map((element) => (
+              <Grid item xs={12} sm={6} md={4} lg={3} key={element._id}>
                 <HistoryProductCard
-                  key={element._id}
                   id={element._id}
                   name={element.name}
                   brand={element.brand}
@@ -23,20 +22,31 @@ function HistoryProductShow(props) {
                   thumbnail={element.thumbnail}
                   category={element.category}
                 />
-              );
-            })
+              </Grid>
+            ))
           : null}
-        {props.allProducts.length === 0 ? (
-          <>
-            <img
-              src={notfound}
-              alt="PRODUCTS NOT FOUND"
-              className={classes.favnotfound}
-            />
-          </>
-        ) : null}
-      </div>
-    </>
+      </Grid>
+
+      {props.allProducts?.length === 0 && (
+        <Paper
+          sx={{
+            py: 8,
+            px: 4,
+            textAlign: 'center',
+            borderRadius: 3,
+            backgroundColor: 'white',
+          }}
+        >
+          <ReceiptLongIcon sx={{ fontSize: 80, color: '#ccc', mb: 2 }} />
+          <Typography variant="h5" sx={{ color: '#666', mb: 1 }}>
+            No Purchase History
+          </Typography>
+          <Typography variant="body2" sx={{ color: '#999' }}>
+            Your purchased items will appear here
+          </Typography>
+        </Paper>
+      )}
+    </Box>
   );
 }
 

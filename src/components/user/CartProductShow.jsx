@@ -1,17 +1,16 @@
-import React from "react";
-import classes from "./ProductShow.module.css";
-import CartProductCard from "./CartProductCard";
-import notfound from "../../img/notfound.png";
+import React from 'react';
+import { Box, Grid, Paper, Typography } from '@mui/material';
+import CartProductCard from './CartProductCard';
+import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 
 function CartProductShow(props) {
   return (
-    <>
-      <div className={classes.show}>
+    <Box>
+      <Grid container spacing={3}>
         {props.allProducts
-          ? props.allProducts?.map((element) => {
-              return (
+          ? props.allProducts?.map((element) => (
+              <Grid item xs={12} sm={6} md={4} lg={3} key={element._id}>
                 <CartProductCard
-                  key={element._id}
                   id={element._id}
                   name={element.name}
                   brand={element.brand}
@@ -27,20 +26,31 @@ function CartProductShow(props) {
                   cart={element.cart}
                   state={props.state}
                 />
-              );
-            })
+              </Grid>
+            ))
           : null}
-        {props.allProducts.length === 0 ? (
-          <>
-            <img
-              src={notfound}
-              alt="PRODUCTS NOT FOUND"
-              className={classes.favnotfound}
-            />
-          </>
-        ) : null}
-      </div>
-    </>
+      </Grid>
+
+      {props.allProducts?.length === 0 && (
+        <Paper
+          sx={{
+            py: 8,
+            px: 4,
+            textAlign: 'center',
+            borderRadius: 3,
+            backgroundColor: 'white',
+          }}
+        >
+          <RemoveShoppingCartIcon sx={{ fontSize: 80, color: '#ccc', mb: 2 }} />
+          <Typography variant="h5" sx={{ color: '#666', mb: 1 }}>
+            Your Cart is Empty
+          </Typography>
+          <Typography variant="body2" sx={{ color: '#999' }}>
+            Add items to your cart to see them here
+          </Typography>
+        </Paper>
+      )}
+    </Box>
   );
 }
 
